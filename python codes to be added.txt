@@ -1,0 +1,48 @@
+
+# SENDING EMAIL
+
+
+
+#FUNCTION FOR TAKING MESSEGE AND SENDING IT AS EMAIL.
+def sendEmail(to, content):
+    server = smtplib.SMTP('smtp.gmail.com', 535)
+    server.ehlo()
+    server.starttls()       ssl
+    server.login('xyz@gmail.com', 'password')
+    server.sendmail('123abc@gmail.com', to, content)
+    server.close()   
+#DRIVER CODE      
+elif 'send mail' or 'send email' or 'mail' in query:
+            try:
+               speak("What should I send ")
+               content = takecommand()
+               to = '123abc@gmail.com'
+               sendEmail(to, content)
+               speak("Email sent sir!")
+            except Exception as e:
+                print(e)
+                speak("Unable to send E-mail")
+
+
+
+
+
+
+
+
+
+#CODE TO DO WEB SEARCH
+
+        elif 'open google' in query:
+            wb.get('YOUR GOOGLE OR SEARCH ENGINE PATH').open_new_tab("google.com")
+
+        elif 'open youtube':
+            wb.open_new_tab("youtube.com")
+        elif 'open amazon':
+            wb.open_new_tab("amazon.in")
+        elif 'instagram':
+            wb.open_new_tab("instagram.com")
+        elif 'facebook':
+            wb.open_new_tab("facebook.com")
+        elif 'flipkart':
+            wb.open_new_tab("flipkart.com")
